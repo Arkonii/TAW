@@ -1,5 +1,6 @@
 <div class="card-body">
-  <h5 class="card-title">Card title</h5>
-  <p class="card-text">{{ text | summary : 35 }}</p>
-  <a [routerLink]="['/blog/detail/1']" class="btn btn-primary">Więcej</a>
+  <p class="card-text">{{ text | summary : 30 }}</p>
+  <a href="#" class="btn btn-primary" [routerLink]="['/blog/detail/' + id]">
+    Więcej
+  </a>
 </div>

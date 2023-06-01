@@ -7,5 +7,9 @@ import { Component, Input  } from '@angular/core';
 })
 export class BlogItemTextComponent {
     @Input() text?: string;
+    @Input() id?: number;
+    constructor() { }
 
+    
+    ngOnInit(): void {}
 }

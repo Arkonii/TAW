@@ -9,5 +9,9 @@ export class BlogItemComponent {
 
     @Input() image?: string;
     @Input() text?: string;
+    @Input() id?: number;
+    constructor() { }
+
+    ngOnInit(): void {}
 
 }
