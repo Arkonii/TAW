@@ -1,0 +1,15 @@
+<!-- login.component.html -->
+<div class="container">
+  <form (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="username">Login:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Hasło:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Zaloguj</button>
+    <button class="btn btn-link" (click)="goToRegister()">Rejestracja</button>
+  </form>
+</div>

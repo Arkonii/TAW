@@ -1,0 +1,30 @@
+<div style="position: fixed; top: 0; right: 0; padding: 10px;">
+  <button (click)="logout()">Wyloguj</button>
+</div>
+
+<div style="margin-top: 50px;">
+  <h2>Witaj, {{ username }}!</h2>
+
+  <!-- Lista wiadomości -->
+  <div *ngIf="messages.length > 0" style="display: flex; flex-direction: column-reverse;">
+    <div *ngFor="let message of messages.slice().reverse()" style="padding: 10px; margin: 10px; background-color: #f0f0f0;">
+      <div style="display: flex; justify-content: space-between;">
+        <div>
+          <span class="username">{{ message.username }}:</span>
+          <span class="content">{{ message.content }}</span>
+        </div>
+        <button *ngIf="message.username === username" (click)="deleteMessage(message)">Usuń</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="messages.length === 0">
+    <p>Brak wiadomości do wyświetlenia.</p>
+  </div>
+</div>
+
+<div style="position: fixed; bottom: 0; left: 0; right: 0; padding: 10px; background-color: #f0f0f0;">
+  <form [formGroup]="messageForm" (ngSubmit)="submitMessage()" style="display: flex; align-items: center;">
+    <textarea formControlName="content" rows="4" placeholder="Wpisz swoją wiadomość" style="flex: 1;"></textarea>
+    <button type="submit" [disabled]="messageForm.invalid">Wyślij</button>
+  </form>
+</div>

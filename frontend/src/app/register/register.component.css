@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-right: 10px;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 10px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+}
